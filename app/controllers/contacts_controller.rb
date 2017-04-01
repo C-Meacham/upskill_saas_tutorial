@@ -5,8 +5,8 @@ class ContactsController < ApplicationController
   def create
    @contact = Contact.new(contact_params)
     if @contact.save
-      name = pramas[:contact][:name]
-      email = params[:contact][:name]
+      name = params[:contact][:name]
+      email = params[:contact][:email]
       body = params[:contact][:comments]
       ContactMailer.contact_email(name, email, body).deliver
       flash[:success] = "Message Sent"
