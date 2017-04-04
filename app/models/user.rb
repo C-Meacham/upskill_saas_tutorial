@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          
   belongs_to :plan
+  has_one :profile
   # If Pro user passes validation then send card info to Stripe
   # Stripe creates subscription 
   # Stripe sends customer token
